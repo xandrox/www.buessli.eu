@@ -4,4 +4,27 @@
 // Include responsive Bootstrap styles
 // @import "bootstrap-responsive";
 
+body {
+     background-color: #DCA826;
+     padding-top: 40px;
+}
+
+.content {
+     margin: auto;
+     padding-top: 20px;
+     width: 1020px;
+     background-color: #FFFFFF;
+}
+
 .map { width: 500px; height: 500px; margin: 0; padding: 0 }
+
+a, a:hover {
+    color: #DCA826;
+    text-decoration: none;
+}
+
+table[data-title] img {
+  margin-right: 5px;
+  padding: 2px;
+  background-color: #DCA826;
+}

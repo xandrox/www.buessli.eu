@@ -25,7 +25,7 @@ function initialize() {
 		var poly = new google.maps.Polyline({
 		    // use your own style here
 		    path: points,
-		    strokeColor: "#FF00AA",
+		    strokeColor: "#DCA826",
 		    strokeOpacity: .7,
 		    strokeWeight: 4
 		});
