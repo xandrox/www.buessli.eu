@@ -14,6 +14,7 @@ body {
      padding-top: 20px;
      width: 1020px;
      background-color: #FFFFFF;
+     position: relative;
 }
 
 div.map { width: 758px; height: 500px; margin: 0; padding: 0 }
@@ -27,7 +28,7 @@ table.map td {
    padding: 2px;
 }
 
-a, a:hover {
+h2, a, a:hover {
     color: #DCA826;
     text-decoration: none;
 }
@@ -39,6 +40,43 @@ table[data-title] img {
 }
 
 .header {
-  height: 200px;
+  height: 180px;
   background: url('../images/header.png') no-repeat;
+}
+
+div.left {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fafafa;
+  width: 764px;
+}
+
+div.right {
+  border-radius: 10px;
+  position: absolute;
+  top: 200px;
+  right: 0px;
+  width: 190px;
+  height: auto;
+  background-color: #ebebeb;
+  padding: 10px;
+  margin: 10px;
+}
+
+footer {
+  padding: 0px 20px 10px 20px;
+}
+
+.pager a {
+  // min-width: 300px;
+}
+
+div.panorama {
+   padding: 2px;
+   background-color: #DCA826;
+}
+
+.panorama img {
+   width: 100%;
 }

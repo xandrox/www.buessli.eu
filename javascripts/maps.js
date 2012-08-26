@@ -9,6 +9,9 @@ function initialize() {
 	tr.append(td);
 	td.append(this);
 	var gpx = $(this).attr("gpx");
+	if (window.google === undefined) {
+	    return;
+	}
 	var map = new google.maps.Map(this, {
 	    mapTypeId: google.maps.MapTypeId.TERRAIN
 	});
@@ -42,6 +45,11 @@ function initialize() {
 	    }
 	});
     });
+}
+
+var ajustHeight = function() {
+    var height = $(".left").height() + 235;
+    $(".right").height(height);
 }
 
 $(document).ready(function(){
