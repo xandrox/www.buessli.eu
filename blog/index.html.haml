@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-- for post in site.posts
+- for post in site.posts[0,5]
   .blogpost
     %h2
       %a{:href=>"#{site.base_url}#{post.url}"}= post.title

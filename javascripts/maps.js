@@ -22,13 +22,31 @@ function initialize() {
 	    dataType: "xml",
 	    success: function(xml) {
 		var points = [];
+		var markers = [];
 		var bounds = new google.maps.LatLngBounds ();
-		$(xml).find("trkpt").each(function() {
-		    var lat = $(this).attr("lat");
-		    var lon = $(this).attr("lon");
-		    var p = new google.maps.LatLng(lat, lon);
-		    points.push(p);
-		    bounds.extend(p);
+		$(xml).find("trk").each(function() {
+                    var first = true;
+		    var name = $(this).find("name").text().replace("\.small", "").replace("_R", "");
+		    $(this).find("trkpt").each(function() {
+			var lat = $(this).attr("lat");
+			var lon = $(this).attr("lon");
+			var p = new google.maps.LatLng(lat, lon);
+			points.push(p);
+			bounds.extend(p);
+
+			var base = $("body").attr("base");
+			var image = base + "/images/bus.png"
+			if (first) {
+			    var marker = new google.maps.Marker({
+				map: map,
+				position: p,
+				title: name,
+				icon: image
+			    });
+			    markers.push(marker);
+			}
+			first = false;
+		    });
 		});
 		
 		var poly = new google.maps.Polyline({
