@@ -1,11 +1,17 @@
 function initialize() {
-    $(".map").each(function(){
-	console.log(this);
+    $("div.map").each(function(){
+	var table = $('<table class="map"></table>');
+	$(this).before(table);
+	$(this).detach();
+	var tr = $("<tr></tr>");
+	table.append(tr);
+	var td = $("<td></td>");
+	tr.append(td);
+	td.append(this);
+	var gpx = $(this).attr("gpx");
 	var map = new google.maps.Map(this, {
 	    mapTypeId: google.maps.MapTypeId.TERRAIN
 	});
-
-	var gpx = $(this).attr("gpx");
 
 	$.ajax({
 	    type: "GET",

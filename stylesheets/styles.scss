@@ -16,7 +16,16 @@ body {
      background-color: #FFFFFF;
 }
 
-.map { width: 500px; height: 500px; margin: 0; padding: 0 }
+div.map { width: 758px; height: 500px; margin: 0; padding: 0 }
+
+table.map {
+   border: 10px;
+   background-color: #DCA826;
+}
+
+table.map td {
+   padding: 2px;
+}
 
 a, a:hover {
     color: #DCA826;
