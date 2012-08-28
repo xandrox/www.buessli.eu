@@ -124,10 +124,10 @@ class PicasaAlbum
   def get_picture_table(cell_one=1, cell_two=2, cell_three=3, cell_four=4)
     html = "<table class=\"picasa_pictures\" data-title=\"" + @name + "\">"
     html += "<tr>"
-    html += get_picture_cell(self.pictures[cell_one])
-    html += get_picture_cell(self.pictures[cell_two])
-    html += get_picture_cell(self.pictures[cell_three])
-    html += get_picture_cell(self.pictures[cell_four])
+    html += get_picture_cell(self.pictures[cell_one - 1 ])
+    html += get_picture_cell(self.pictures[cell_two - 1])
+    html += get_picture_cell(self.pictures[cell_three - 1])
+    html += get_picture_cell(self.pictures[cell_four - 1])
     html += "</tr>"
     html += "</table>"
     html += "<p><center>"
@@ -139,11 +139,13 @@ class PicasaAlbum
 
   def get_picture_cell(picture)
     html = "<td>"
-    html += "<center>"
-    html += "<a href=\"" + picture["link"] + "\">"
-    html += "<img src=\"" + picture["url"] + "\">"
-    html += "</a>"
-    html += "</center>"
+    if (picture != nil)
+      html += "<center>"
+      html += "<a href=\"" + picture["link"] + "\">"
+      html += "<img src=\"" + picture["url"] + "\">"
+      html += "</a>"
+      html += "</center>"
+    end
     html += "</td>"
     return html
   end
