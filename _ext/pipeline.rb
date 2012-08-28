@@ -2,10 +2,7 @@ require 'picasa'
 
 Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Picasa.new
-  extension Awestruct::Extensions::Posts.new( '/blog', :posts )
-  # extension Awestruct::Extensions::Tagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10, :sanitize=>true )
-  # extension Awestruct::Extensions::TagCloud.new(:posts, '/blog/tags/index.html', :layout=>'tab', :title=>'Tags')
-  # extension Awestruct::Extensions::Paginator.new( :posts, '/blog/index', :per_page=>10 )
-  # extension Awestruct::Extensions::Indexifier.new
+  extension Awestruct::Extensions::Posts.new( '/europareise2012', :europareise2012s )
+  extension Awestruct::Extensions::Posts.new( '/busausbau', :busausbaus )
 end
 

@@ -33,6 +33,34 @@
     .content
       .header
       .main
+        %ul.pager
+          - if page.previous_busausbau
+            %li.previous
+              %a{:href=>"#{site.base_url}#{page.previous_busausbau.url}"}
+                &lt;&lt; 
+                - text = page.previous_busausbau.title
+                - if text.size < 40
+                  = text
+                - else
+                  = text.split(//).first(40).to_s  << "..."
+          - if page.next_busausbau
+            %li.next
+              %a{:href=>"#{site.base_url}#{page.next_busausbau.url}"}
+                - text = page.next_busausbau.title
+                - if text.size < 40
+                  = text
+                - else
+                  = text.split(//).first(40).to_s << "..."
+                &gt;&gt;
+        %h2 #{page.title}
+        .blogtagbar
+          -# {page.date.strftime( '%Y-%m-%d' )}
+          &nbsp;|&nbsp;
+          - page.tags.each do |tag|
+            -# %a.label{:href=>tag.primary_page.url}
+            = tag
+            &nbsp;
+        %hr
         ~ content
         %hr
         %footer

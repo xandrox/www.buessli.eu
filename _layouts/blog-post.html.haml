@@ -18,7 +18,7 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.brand{ :href=>"#{site.base_url}" } buessli.eu
+          %a.brand{ :href=>"#{site.base_url}" } buessli.eu - Europareise 2012
           %ul.nav
             %li
               %a{ :href=>"#{site.base_url}/panorama.html" } Panorama
@@ -34,19 +34,19 @@
       .header
       .main
         %ul.pager
-          - if page.previous_post
+          - if page.previous_europareise2012
             %li.previous
-              %a{:href=>"#{site.base_url}#{page.previous_post.url}"}
+              %a{:href=>"#{site.base_url}#{page.previous_europareise2012.url}"}
                 &lt;&lt; 
-                - text = page.previous_post.title
+                - text = page.previous_europareise2012.title
                 - if text.size < 40
                   = text
                 - else
                   = text.split(//).first(40).to_s  << "..."
-          - if page.next_post
+          - if page.next_europareise2012
             %li.next
-              %a{:href=>"#{site.base_url}#{page.next_post.url}"}
-                - text = page.next_post.title
+              %a{:href=>"#{site.base_url}#{page.next_europareise2012.url}"}
+                - text = page.next_europareise2012.title
                 - if text.size < 40
                   = text
                 - else
@@ -54,7 +54,7 @@
                 &gt;&gt;
         %h2 #{page.title}
         .blogtagbar
-          #{page.date.strftime( '%Y-%m-%d' )}
+          -# {page.date.strftime( '%Y-%m-%d' )}
           &nbsp;|&nbsp;
           - page.tags.each do |tag|
             -# %a.label{:href=>tag.primary_page.url}

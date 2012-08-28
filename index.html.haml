@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-- for post in site.posts[0,1]
+- for post in site.europareise2012s[0,1]
   .blogpost
     %h2
       %a{:href=>"#{site.base_url}#{post.url}"}= post.title
@@ -20,7 +20,7 @@ layout: base
   %p
     %a{:href=>"#{site.base_url}/route.html"}= "[komplette Reiseroute anzeigen]"
 
-- for post in site.posts[1,10]
+- for post in site.europareise2012s[1,10]
   .blogpost
     %h2
       %a{:href=>"#{site.base_url}#{post.url}"}= post.title

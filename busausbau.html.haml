@@ -3,8 +3,9 @@ layout: base
 inhibit_indexifier: true
 tab: home
 ---
-%h2 Busausbau
-%p Work in progress
-%p Work in progress
-%p Work in progress
-%p Work in progress
+- for post in site.busausbaus
+  .blogpost
+    %h2
+      %a{:href=>"#{site.base_url}#{post.url}"}= post.title
+    %p
+      ~ post.content[0,600]
