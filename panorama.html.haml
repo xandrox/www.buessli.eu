@@ -3,11 +3,11 @@ layout: base
 inhibit_indexifier: true
 tab: home
 ---
-%h2 Panorama
-- for picture in site.picasa.alben["panorama"].pictures.reverse[0,10]
-  .panorama
-    %a{:href => "#{picture['link']}"}
-      %img{:src => "#{picture['url']}"}
-  %p
-%a{:href => "#{site.picasa.alben['panorama'].link}"}
-  %p Mehr Bilder
+%h2 Panoramaeindrücke der Europareise 2012
+%p 
+.panoramas
+  - for picture in site.picasa.alben["panorama"].pictures.reverse[0,10]
+    .panorama
+      %a{:href => "#{picture['link']}"}
+        %img{:src => "#{picture['url']}"}
+  %a{:href => "#{site.picasa.alben['panorama'].link}"}= "[alle Panoramas anzeigen]"

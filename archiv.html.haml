@@ -1,0 +1,9 @@
+---
+layout: base
+---
+- for post in site.posts[10, site.posts.length]
+  .blogpost
+    %h2
+      %a{:href=>"#{site.base_url}#{post.url}"}= post.title
+    %p
+      ~ post.content[0,600]

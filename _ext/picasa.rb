@@ -14,6 +14,7 @@ module Awestruct
       def initialize(output_base_path='picasa_cache/')
         puts "Picasa Init"
         @output_base_path = output_base_path
+        @alben = []
       end
 
       def execute(site)
@@ -24,6 +25,7 @@ module Awestruct
         File.open( "picasa.json", 'wb' ) do |f|
           f.write @site.picasa.to_json
         end
+        @site.picasa.get_alben_overview = PicasaAlbumOverview.new(@alben).get_overview_table
       end
 
       private
@@ -63,7 +65,9 @@ module Awestruct
         root.get_elements( 'channel/item' ).each do |item|
           pictures.push(handle_picture(item, size))
         end
-        @site.picasa.alben[album_title] = PicasaAlbum.new(album_title)
+        album = PicasaAlbum.new(album_title)
+        @alben.push(album)
+        @site.picasa.alben[album_title] = album
         @site.picasa.alben[album_title].pictures = pictures
         @site.picasa.alben[album_title].link = root.get_elements("channel/link")[0].text
       end
@@ -152,12 +156,50 @@ class PicasaAlbum
 
   def to_json(*a)
     {
-      'json_class'   => self.class.name,
-      'data'         => [ link, pictures ]
+      'link'   => link,
+      'pictures'   => pictures
     }.to_json(*a)
   end
   
   def self.json_create(o)
     new(*o['data'])
+  end
+end
+
+class PicasaAlbumOverview
+  def initialize(alben)
+    @alben = alben
+  end
+  def get_overview_table
+    html = "<table>"
+    html += "<tr>"
+    html += get_picture_cell(@alben[0].pictures[0])
+    html += get_picture_cell(@alben[1].pictures[0])
+    html += get_picture_cell(@alben[2].pictures[0])
+    html += get_picture_cell(@alben[3].pictures[0])
+    html += "</tr>"
+    html += "<tr>"
+    html += get_picture_cell(@alben[4].pictures[0])
+    html += get_picture_cell(@alben[5].pictures[0])
+    html += get_picture_cell(@alben[6].pictures[0])
+    html += get_picture_cell(@alben[7].pictures[0])
+    html += "</tr>"
+    html += "</table>"
+    return html
+  end
+
+  private
+
+  def get_picture_cell(picture)
+    html = "<td>"
+    if (picture != nil)
+      html += "<center>"
+      html += "<a href=\"" + picture["link"] + "\">"
+      html += "<img src=\"" + picture["url"] + "\">"
+      html += "</a>"
+      html += "</center>"
+    end
+    html += "</td>"
+    return html
   end
 end

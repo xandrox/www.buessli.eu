@@ -74,6 +74,7 @@ footer {
 div.panorama {
    padding: 2px;
    background-color: #DCA826;
+   margin-bottom: 30px;   
 }
 
 .panorama img {
@@ -84,4 +85,8 @@ div[route] { height: 758px; }
 
 table.picasa_pictures {
   width: 100%;
+}
+
+div.panoramas {
+  margin: auto;
 }
