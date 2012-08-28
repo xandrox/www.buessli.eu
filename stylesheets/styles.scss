@@ -17,7 +17,7 @@ body {
      position: relative;
 }
 
-div.map { width: 758px; height: 500px; margin: 0; padding: 0 }
+div.map { width: 952px; height: 500px; margin: 0; padding: 0 }
 
 table.map {
    border: 10px;
@@ -44,12 +44,11 @@ table[data-title] img {
   background: url('../images/header.png') no-repeat;
 }
 
-div.left {
+div.main {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
   background-color: #fafafa;
-  width: 764px;
 }
 
 div.right {
@@ -82,3 +81,7 @@ div.panorama {
 }
 
 div[route] { height: 758px; }
+
+table.picasa_pictures {
+  width: 100%;
+}

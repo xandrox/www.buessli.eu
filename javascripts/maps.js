@@ -1,7 +1,9 @@
 function initialize() {
     $("div.map").each(function(){
+	var center = $('<center></center>')
 	var table = $('<table class="map"></table>');
-	$(this).before(table);
+	center.append(table)
+	$(this).before(center);
 	$(this).detach();
 	var tr = $("<tr></tr>");
 	table.append(tr);

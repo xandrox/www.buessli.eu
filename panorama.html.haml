@@ -4,5 +4,10 @@ inhibit_indexifier: true
 tab: home
 ---
 %h2 Panorama
-.panorama
-  %img{:src => "#{site.base_url}/images/panorama/2012-08-24-panorama-budapest-02.jpg"}
+- for picture in site.picasa.alben["panorama"].pictures.reverse[0,10]
+  .panorama
+    %a{:href => "#{picture['link']}"}
+      %img{:src => "#{picture['url']}"}
+  %p
+%a{:href => "#{site.picasa.alben['panorama'].link}"}
+  %p Mehr Bilder
