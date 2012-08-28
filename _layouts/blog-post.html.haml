@@ -38,7 +38,7 @@
         %ul.pager
           - if page.previous_post
             %li.previous
-              %a{:href=>page.previous_post.url}
+              %a{:href=>"#{site.base_url}#{page.previous_post.url}"}
                 &lt;&lt; 
                 - text = page.previous_post.title
                 - if text.size < 40
@@ -47,7 +47,7 @@
                   = text.split(//).first(40).to_s  << "..."
           - if page.next_post
             %li.next
-              %a{:href=>page.next_post.url}
+              %a{:href=>"#{site.base_url}#{page.next_post.url}"}
                 - text = page.next_post.title
                 - if text.size < 40
                   = text
