@@ -126,31 +126,31 @@ class PicasaAlbum
   end
 
   def get_picture_table(cell_one=1, cell_two=2, cell_three=3, cell_four=4)
-    html = "<table class=\"picasa_pictures\" data-title=\"" + @name + "\">"
-    html += "<tr>"
+    html = "<table class=\"picasa_pictures\" data-title=\"" + @name + "\">\n"
+    html += "<tr>\n"
     html += get_picture_cell(self.pictures[cell_one - 1 ])
     html += get_picture_cell(self.pictures[cell_two - 1])
     html += get_picture_cell(self.pictures[cell_three - 1])
     html += get_picture_cell(self.pictures[cell_four - 1])
-    html += "</tr>"
-    html += "</table>"
-    html += "<p><center>"
-    html += "<a href=\"" + self.link + "\">"
-    html += "[alle Bilder anzeigen]</a>"
-    html += "</center></p>"
+    html += "</tr>\n"
+    html += "</table>\n"
+    html += "<p><center>\n"
+    html += "<a href=\"" + self.link + "\">\n"
+    html += "[alle Bilder anzeigen]</a>\n"
+    html += "</center></p>\n"
     return html
   end
 
   def get_picture_cell(picture)
     html = "<td>"
     if (picture != nil)
-      html += "<center>"
-      html += "<a href=\"" + picture["link"] + "\">"
-      html += "<img src=\"" + picture["url"] + "\">"
-      html += "</a>"
-      html += "</center>"
+      html += "<center>\n"
+      html += "<a href=\"" + picture["link"] + "\">\n"
+      html += "<img src=\"" + picture["url"] + "\">\n"
+      html += "</a>\n"
+      html += "</center>\n"
     end
-    html += "</td>"
+    html += "</td>\n"
     return html
   end
 
@@ -171,35 +171,35 @@ class PicasaAlbumOverview
     @alben = alben
   end
   def get_overview_table
-    html = "<table class=\"picasa_pictures\" data-title=\"none\">"
-    html += "<tr>"
+    html = "<table class=\"picasa_pictures\" data-title=\"none\">\n"
+    html += "<tr>\n"
     html += get_picture_cell(@alben[0].pictures[0])
     html += get_picture_cell(@alben[1].pictures[0])
     html += get_picture_cell(@alben[2].pictures[0])
     html += get_picture_cell(@alben[3].pictures[0])
-    html += "</tr>"
-    html += "<tr>"
+    html += "</tr>\n"
+    html += "<tr>\n"
     html += get_picture_cell(@alben[4].pictures[0])
     html += get_picture_cell(@alben[5].pictures[0])
     html += get_picture_cell(@alben[6].pictures[0])
     html += get_picture_cell(@alben[7].pictures[0])
-    html += "</tr>"
-    html += "</table>"
+    html += "</tr>\n"
+    html += "</table>\n"
     return html
   end
 
   private
 
   def get_picture_cell(picture)
-    html = "<td>"
+    html = "<td>\n"
     if (picture != nil)
-      html += "<center>"
-      html += "<a href=\"" + picture["link"] + "\">"
-      html += "<img src=\"" + picture["url"] + "\">"
-      html += "</a>"
-      html += "</center>"
+      html += "<center>\n"
+      html += "<a href=\"" + picture["link"] + "\">\n"
+      html += "<img src=\"" + picture["url"] + "\">\n"
+      html += "</a>\n"
+      html += "</center>\n"
     end
-    html += "</td>"
+    html += "</td>\n"
     return html
   end
 end
