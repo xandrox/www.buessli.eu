@@ -33,12 +33,6 @@ h2, a, a:hover {
     text-decoration: none;
 }
 
-table[data-title] img {
-  margin-right: 5px;
-  padding: 2px;
-  background-color: #DCA826;
-}
-
 .header {
   height: 180px;
   background: url('../images/header.png') no-repeat;
@@ -86,6 +80,14 @@ div[route] { height: 758px; }
 table.picasa_pictures {
   width: 100%;
 }
+
+table.picasa_pictures img {
+  margin-right: 5px;
+  padding: 2px;
+  background-color: #DCA826;
+}
+
+
 
 div.panoramas {
   margin: auto;

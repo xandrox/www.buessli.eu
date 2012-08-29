@@ -22,10 +22,19 @@ module Awestruct
         @site.picasa = {}
         @site.picasa.alben = {}
         rebuild_cache()
-        File.open( "picasa.json", 'wb' ) do |f|
+        output_file =  @output_base_path + "/picasa.json"
+        FileUtils.mkdir_p( File.dirname( output_file ) )
+        File.open( output_file, 'wb' ) do |f|
           f.write @site.picasa.to_json
         end
         @site.picasa.get_alben_overview = PicasaAlbumOverview.new(@alben).get_overview_table
+        for album in @site.picasa.alben.keys do
+          output_file =  @output_base_path + "/picasa-" + album + ".json"
+          FileUtils.mkdir_p( File.dirname( output_file ) )
+          File.open( output_file, 'wb' ) do |f|
+            f.write @site.picasa.alben[album].to_json
+          end
+        end
       end
 
       private
