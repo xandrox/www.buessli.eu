@@ -182,7 +182,7 @@ class PicasaAlbumOverview
     @alben = alben
   end
   def get_overview_table
-    html = "<table class=\"picasa_pictures\" data-title=\"none\">\n"
+    html = "<table class=\"picasa_pictures picasa_overview\" data-title=\"none\">\n"
     html += "<tr>\n"
     html += get_picture_cell(@alben[0].pictures[0])
     html += get_picture_cell(@alben[1].pictures[0])
