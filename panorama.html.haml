@@ -1,14 +1,14 @@
 ---
 title: 'Panorama'
-layout: base
-inhibit_indexifier: true
-tab: home
+layout: buessli
 ---
-%h2 Panoramaeindrücke der Europareise 2012
-%p 
-.panoramas
-  - for picture in site.picasa.alben["panorama"].pictures.reverse[0,10]
-    .panorama
+.blogpost
+  %h2 Panoramaeindrücke der Europareise 2012
+- for picture in site.picasa.alben["panorama"].pictures.reverse[0,10]
+  .blogpost
+    %center
       %a{:href => "#{picture['link']}"}
-        %img{:src => "#{picture['url']}"}
-  %a{:href => "#{site.picasa.alben['panorama'].link}"}= "[alle Panoramas anzeigen]"
+        %img.panorama{:src => "#{picture['url']}"}
+.blogpost
+  %center
+    %a{:href => "#{site.picasa.alben['panorama'].link}"}= "[ alle Panorama-Bilder anzeigen ]"

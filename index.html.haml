@@ -1,6 +1,6 @@
 ---
 title: 'Europareise 2012'
-layout: base
+layout: buessli
 ---
 - for post in site.europareise2012s[0,1]
   .blogpost
@@ -21,7 +21,8 @@ layout: base
   %p
     .map{:position => "yes" , :gpx =>"#{site.base_url}/gpx/zusammenfassung.small.position.gpx"}
   %p
-    %a{:href=>"#{site.base_url}/route.html"}= "[komplette Reiseroute anzeigen]"
+    %center
+      %a{:href=>"#{site.base_url}/route.html"}= "[ komplette Reiseroute anzeigen ]"
 
 - for post in site.europareise2012s[1,10]
   .blogpost
@@ -32,5 +33,5 @@ layout: base
       %a{:href=>"#{site.base_url}#{post.url}"}= "[weiter lesen ...]"
 .blogpost
   %h2
-    %a{:href=>"#{site.base_url}/archiv.html"}= "Zu den älteren Einträgen"
+    %a{:href=>"#{site.base_url}/archiv.html"}= "Zu den älteren Einträgen ..."
     

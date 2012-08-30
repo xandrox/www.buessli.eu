@@ -23,16 +23,20 @@ module Awestruct
         @site.picasa.alben = {}
         rebuild_cache()
         output_file =  @output_base_path + "/picasa.json"
-        FileUtils.mkdir_p( File.dirname( output_file ) )
-        File.open( output_file, 'wb' ) do |f|
-          f.write @site.picasa.to_json
+        if ( ! File.exist?( output_file ) )
+          FileUtils.mkdir_p( File.dirname( output_file ) )
+          File.open( output_file, 'wb' ) do |f|
+            f.write @site.picasa.to_json
+          end
         end
         @site.picasa.get_alben_overview = PicasaAlbumOverview.new(@alben).get_overview_table
         for album in @site.picasa.alben.keys do
           output_file =  @output_base_path + "/picasa-" + album + ".json"
-          FileUtils.mkdir_p( File.dirname( output_file ) )
-          File.open( output_file, 'wb' ) do |f|
-            f.write @site.picasa.alben[album].to_json
+          if ( ! File.exist?( output_file ) )
+            FileUtils.mkdir_p( File.dirname( output_file ) )
+            File.open( output_file, 'wb' ) do |f|
+              f.write @site.picasa.alben[album].to_json
+            end
           end
         end
       end
@@ -69,7 +73,7 @@ module Awestruct
         pictures = []
         size = "s220-c"
         if ( album_title =~ /panorama/ )
-          size = "s1200"
+          size = "s970"
         end
         root.get_elements( 'channel/item' ).each do |item|
           pictures.push(handle_picture(item, size))
