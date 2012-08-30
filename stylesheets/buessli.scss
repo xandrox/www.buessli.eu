@@ -58,10 +58,12 @@ h2, a, a:hover {
   padding: 10px;
   margin: 10px;
   background-color: #fafafa;
+  min-height: 30px;
 }
 
 .blogpost p {
    font-size: 14px;
+   padding-bottom: 5px;
 }
 
 p.where {
@@ -72,17 +74,27 @@ img.panorama {
   border-radius: 10px;
 }
 
-table.picasa_overview {
+table.picasa_pictures {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
-table.picasa_overview td {
+table.picasa_pictures td {
+  align: top;
   width: 25%;
   height: 240px;
 }
 
-table.picasa_overview img {
+table.picasa_pictures a {
+  position: relative;
+}
+
+table.picasa_pictures img {
+  position: absolute;
   border-radius: 10px;
+  top: -100px;
+  left: 0px;
 }
 
 table.map {
@@ -98,4 +110,24 @@ div.map {
 
 div[route] { height: 758px; }
 
+span.previous {
+  font-size: 14px;
+  float: left;
+  padding: 5px 14px;
+  background-color: white;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
 
+span.next {
+  font-size: 14px;
+  float: right;
+  padding: 5px 14px;
+  background-color: white;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
