@@ -1,0 +1,101 @@
+* {
+  margin: 0px;
+  padding: 0xp;
+}
+
+body {
+     background-color: #DCA826;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+table.body {
+  border-spacing: 0px;
+  background-color: #ffffff;
+  width: 1020px;
+}
+
+td.header {
+     background-color: #000000;
+     padding-left: 20px;
+     height: 40px;
+}
+
+td.header a {
+   font-size: 14px;
+    color: #aaaaaa;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+td.picture {
+  height: 180px;
+  background: url('../images/header.png') no-repeat;
+}
+
+
+td.content {
+     background-color: #ffffff;
+}
+
+td.header a.brand {
+   font-size: 20px;
+}
+
+td.footer {
+   background-color: #ffffff;
+   border-top: 1px #111111 solid;
+   height: 40px;
+   padding-left: 10px;
+}
+
+h2, a, a:hover {
+    color: #DCA826;
+    text-decoration: none;
+}
+
+.blogpost {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fafafa;
+}
+
+.blogpost p {
+   font-size: 14px;
+}
+
+p.where {
+  font-weight: bold;
+}
+
+img.panorama {
+  border-radius: 10px;
+}
+
+table.picasa_overview {
+  width: 100%;
+}
+
+table.picasa_overview td {
+  width: 25%;
+  height: 240px;
+}
+
+table.picasa_overview img {
+  border-radius: 10px;
+}
+
+table.map {
+  padding: 10px 10px 20px 10px;
+}
+
+div.map { 
+  width: 952px; 
+  height: 500px; 
+  margin: 0; 
+  padding: 0;
+}
+
+div[route] { height: 758px; }
+
+

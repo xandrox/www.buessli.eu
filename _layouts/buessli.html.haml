@@ -1,0 +1,29 @@
+!!!5
+%html
+  %head
+    %meta{ :charset=>'utf-8' }
+    %title buessli.eu - #{page.title}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/buessli.css" }
+    %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/jquery-1.8.0.min.js" }
+    %script{ :type=>'text/javascript', :src=>"https://maps-api-ssl.google.com/maps/api/js?sensor=false" }
+    %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/maps.js" }
+  %body{:base => "#{site.base_url}"}
+    %center
+      %table.body
+        %tr
+          %td.header
+            %a.brand{ :href=>"#{site.base_url}" } buessli.eu - Europareise 2012
+            %a{ :href=>"#{site.base_url}/panorama.html" } Panorama
+            %a{ :href=>"#{site.base_url}/route.html" } Route
+            %a{ :href=>"#{site.base_url}/busausbau.html" } Busausbau
+            %a{ :href=>"#{site.base_url}/impressum.html" } Impressum
+            %a{ :href=>"http://www.facebook.com/buessli" } Facebook
+        %tr
+          %td.picture
+        %tr
+          %td.content
+            ~ content
+        %tr
+          %td.footer
+            %p &copy; www.buessli.eu #{Date.today.year}
+  
