@@ -208,11 +208,11 @@ class PicasaAlbumOverview
   def get_picture_cell(picture)
     html = "<td>\n"
     if (picture != nil)
-      html += "<center>\n"
+      #html += "<center>\n"
       html += "<a href=\"" + picture["link"] + "\">\n"
       html += "<img src=\"" + picture["url"] + "\">\n"
       html += "</a>\n"
-      html += "</center>\n"
+      #html += "</center>\n"
     end
     html += "</td>\n"
     return html

@@ -6,4 +6,5 @@ layout: buessli
     %h2
       %a{:href=>"#{site.base_url}#{post.url}"}= post.title
     %p
-      ~ post.content[0,600]
+      ~ post.content[0,550]
+      %a{:href=>"#{site.base_url}#{post.url}"}= "[weiter lesen ...]"
