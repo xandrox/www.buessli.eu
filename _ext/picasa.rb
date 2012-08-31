@@ -116,7 +116,7 @@ module Awestruct
         puts "GET " + url_to_get
         url = URI.parse( url_to_get )
         http = Net::HTTP.new(url.host, url.port)
-        http.use_ssl = trueg
+        http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         request = Net::HTTP::Get.new(url.request_uri)
         res = http.start {|http| http.request(request) }
@@ -139,7 +139,7 @@ class PicasaAlbum
   end
 
   def get_picture_table(cell_one=1, cell_two=2, cell_three=3, cell_four=4)
-    puts "get picture table for " + @name
+    # puts "get picture table for " + @name
     html = "<table class=\"picasa_pictures\" data-title=\"" + @name + "\">\n"
     html += "<tr>\n"
     html += get_picture_cell(self.pictures[cell_one - 1 ])
