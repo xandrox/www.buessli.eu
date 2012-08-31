@@ -139,6 +139,7 @@ class PicasaAlbum
   end
 
   def get_picture_table(cell_one=1, cell_two=2, cell_three=3, cell_four=4)
+    puts "get picture table for " + @name
     html = "<table class=\"picasa_pictures\" data-title=\"" + @name + "\">\n"
     html += "<tr>\n"
     html += get_picture_cell(self.pictures[cell_one - 1 ])
