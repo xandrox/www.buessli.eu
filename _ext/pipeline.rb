@@ -11,6 +11,6 @@ Awestruct::Extensions::Pipeline.new do
     '/europareise2012/feed.atom', 
     :num_entries=>10000,
     :content_url=>'https://www.buessli.eu/europareise2012',
-    :feed_title=> 'No Relation To' )
+    :feed_title=> 'buessli.eu - Europareise 2012' )
 end
 
