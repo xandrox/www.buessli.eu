@@ -4,8 +4,8 @@
 }
 
 body {
-     background-color: #DCA826;
-     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #DCA826;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 table.body {
@@ -15,9 +15,9 @@ table.body {
 }
 
 td.header {
-     background-color: #000000;
-     padding-left: 20px;
-     height: 40px;
+  background-color: #000000;
+  padding-left: 20px;
+  height: 40px;
 }
 
 td.header a {
@@ -63,12 +63,17 @@ h2, a, a:hover {
 
 .blogpost p {
    font-size: 14px;
-   padding-bottom: 5px;
+   line-height: 20px;
+   padding-bottom: 15px;
+}
+
+.blogpost h2 {
+   padding-bottom: 10px;
 }
 
 .blogpost h1 {
    font-size: 14px;
-   padding-bottom: 5px;
+   padding-bottom: 10px;
 }
 
 p.where {
@@ -80,7 +85,7 @@ img.panorama {
 }
 
 table.picasa_pictures {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 10px;
   width: 100%;
 }
