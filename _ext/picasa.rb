@@ -14,7 +14,6 @@ module Awestruct
       def initialize(output_base_path='picasa_cache/')
         puts "Picasa Init"
         @output_base_path = output_base_path
-        @alben = []
       end
 
       def execute(site)
@@ -29,7 +28,7 @@ module Awestruct
             f.write @site.picasa.to_json
           end
         end
-        @site.picasa.get_alben_overview = PicasaAlbumOverview.new(@alben).get_overview_table
+        @site.picasa.get_alben_overview = PicasaAlbumOverview.new(@site.picasa.overview).get_overview_table
         for album in @site.picasa.alben.keys do
           output_file =  @output_base_path + "/picasa-" + album + ".json"
           if ( ! File.exist?( output_file ) )
@@ -54,6 +53,13 @@ module Awestruct
         body = cache_file(user_url, output_file)
         doc = REXML::Document.new( body )
         root = doc.root
+
+        @site.picasa.overview = PicasaAlbum.new
+        @site.picasa.overview.pictures = []
+        root.get_elements( 'channel/item' ).each do |item|
+          @site.picasa.overview.pictures.push(handle_picture(item, "s220-c"))
+        end
+
         root.get_elements( 'channel/item/guid' ).each do |item|
           handle_album(item.text) 
         end
@@ -79,7 +85,6 @@ module Awestruct
           pictures.push(handle_picture(item, size))
         end
         album = PicasaAlbum.new(album_title)
-        @alben.push(album)
         @site.picasa.alben[album_title] = album
         @site.picasa.alben[album_title].pictures = pictures
         @site.picasa.alben[album_title].link = root.get_elements("channel/link")[0].text
@@ -183,22 +188,22 @@ class PicasaAlbum
 end
 
 class PicasaAlbumOverview
-  def initialize(alben)
-    @alben = alben
+  def initialize(album)
+    @album = album
   end
   def get_overview_table
     html = "<table class=\"picasa_pictures picasa_overview\" data-title=\"none\">\n"
     html += "<tr>\n"
-    html += get_picture_cell(@alben[0].pictures[0])
-    html += get_picture_cell(@alben[1].pictures[0])
-    html += get_picture_cell(@alben[2].pictures[0])
-    html += get_picture_cell(@alben[3].pictures[0])
+    html += get_picture_cell(@album.pictures[0])
+    html += get_picture_cell(@album.pictures[1])
+    html += get_picture_cell(@album.pictures[2])
+    html += get_picture_cell(@album.pictures[3])
     html += "</tr>\n"
     html += "<tr>\n"
-    html += get_picture_cell(@alben[4].pictures[0])
-    html += get_picture_cell(@alben[5].pictures[0])
-    html += get_picture_cell(@alben[6].pictures[0])
-    html += get_picture_cell(@alben[7].pictures[0])
+    html += get_picture_cell(@album.pictures[4])
+    html += get_picture_cell(@album.pictures[5])
+    html += get_picture_cell(@album.pictures[6])
+    html += get_picture_cell(@album.pictures[7])
     html += "</tr>\n"
     html += "</table>\n"
     return html
