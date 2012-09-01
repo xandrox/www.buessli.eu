@@ -81,6 +81,6 @@ var switchPictures = function(table) {
 
 function getRandomTime() {
     var randomTime = Math.floor(2000 * Math.random());
-    randomTime += 4000;
+    randomTime += 2000;
     return randomTime;
 }
