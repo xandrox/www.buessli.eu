@@ -66,7 +66,7 @@ module Awestruct
       end
       
       def handle_album(album_url)
-        album_url = album_url + "&imgmax=100"
+        album_url = album_url + "&kind=photo&imgmax=100"
         album_url = album_url.gsub(/\/entry\//, "/feed/")
         album_url = album_url.gsub(/\/photoid.*\?/, "?")
         output_file = album_url.gsub(/https:\/\/picasaweb.google.com\/data\/feed\/base\//, @output_base_path)
@@ -96,6 +96,7 @@ module Awestruct
         url = url.gsub(/s100-c/, "s100")
         picture["url"] = url.gsub(/s100/, size)
         picture["link"] = picture_item.get_elements("link")[0].text
+        picture["title"] = picture_item.get_elements("title")[0].text
         return picture
       end
       
@@ -194,10 +195,22 @@ class PicasaAlbumOverview
   def get_overview_table
     html = "<table class=\"picasa_pictures picasa_overview\" data-title=\"none\">\n"
     html += "<tr>\n"
+    html += get_title_cell(@album.pictures[0])
+    html += get_title_cell(@album.pictures[1])
+    html += get_title_cell(@album.pictures[2])
+    html += get_title_cell(@album.pictures[3])
+    html += "</tr>\n"
+    html += "<tr>\n"
     html += get_picture_cell(@album.pictures[0])
     html += get_picture_cell(@album.pictures[1])
     html += get_picture_cell(@album.pictures[2])
     html += get_picture_cell(@album.pictures[3])
+    html += "</tr>\n"
+    html += "<tr>\n"
+    html += get_title_cell(@album.pictures[4])
+    html += get_title_cell(@album.pictures[5])
+    html += get_title_cell(@album.pictures[6])
+    html += get_title_cell(@album.pictures[7])
     html += "</tr>\n"
     html += "<tr>\n"
     html += get_picture_cell(@album.pictures[4])
@@ -219,6 +232,19 @@ class PicasaAlbumOverview
       html += "<img src=\"" + picture["url"] + "\">\n"
       html += "</a>\n"
       #html += "</center>\n"
+    end
+    html += "</td>\n"
+    return html
+  end
+
+  def get_title_cell(picture)
+    html = "<td class=\"title\">\n"
+    if (picture != nil)
+      html += "<center>\n"
+      html += "<a href=\"" + picture["link"] + "\">\n"
+      html += picture["title"]
+      html += "</a>\n"
+      html += "</center>\n"
     end
     html += "</td>\n"
     return html

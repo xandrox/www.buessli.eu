@@ -97,6 +97,11 @@ table.picasa_pictures td {
   height: 240px;
 }
 
+table.picasa_pictures td.title {
+  vertical-align: bottom;
+  height: 30px;
+}
+
 table.picasa_pictures a {
   position: relative;
 }
