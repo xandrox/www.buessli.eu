@@ -193,13 +193,7 @@ class PicasaAlbumOverview
     @album = album
   end
   def get_overview_table
-    html = "<table class=\"picasa_pictures picasa_overview\" data-title=\"none\">\n"
-    html += "<tr>\n"
-    html += get_title_cell(@album.pictures[0])
-    html += get_title_cell(@album.pictures[1])
-    html += get_title_cell(@album.pictures[2])
-    html += get_title_cell(@album.pictures[3])
-    html += "</tr>\n"
+    html = "<table class=\"picasa_overview\" data-title=\"none\">\n"
     html += "<tr>\n"
     html += get_picture_cell(@album.pictures[0])
     html += get_picture_cell(@album.pictures[1])
@@ -207,16 +201,22 @@ class PicasaAlbumOverview
     html += get_picture_cell(@album.pictures[3])
     html += "</tr>\n"
     html += "<tr>\n"
-    html += get_title_cell(@album.pictures[4])
-    html += get_title_cell(@album.pictures[5])
-    html += get_title_cell(@album.pictures[6])
-    html += get_title_cell(@album.pictures[7])
+    html += get_title_cell(@album.pictures[0])
+    html += get_title_cell(@album.pictures[1])
+    html += get_title_cell(@album.pictures[2])
+    html += get_title_cell(@album.pictures[3])
     html += "</tr>\n"
     html += "<tr>\n"
     html += get_picture_cell(@album.pictures[4])
     html += get_picture_cell(@album.pictures[5])
     html += get_picture_cell(@album.pictures[6])
     html += get_picture_cell(@album.pictures[7])
+    html += "</tr>\n"
+    html += "<tr>\n"
+    html += get_title_cell(@album.pictures[4])
+    html += get_title_cell(@album.pictures[5])
+    html += get_title_cell(@album.pictures[6])
+    html += get_title_cell(@album.pictures[7])
     html += "</tr>\n"
     html += "</table>\n"
     return html

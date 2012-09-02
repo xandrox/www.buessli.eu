@@ -97,11 +97,6 @@ table.picasa_pictures td {
   height: 240px;
 }
 
-table.picasa_pictures td.title {
-  vertical-align: bottom;
-  height: 30px;
-}
-
 table.picasa_pictures a {
   position: relative;
 }
@@ -111,6 +106,20 @@ table.picasa_pictures img {
   border-radius: 10px;
   top: -100px;
   left: 0px;
+}
+
+table.picasa_overview {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+table.picasa_overview td {
+  width: 25%;
+}
+
+table.picasa_overview img {
+  border-radius: 10px;
 }
 
 table.map {
