@@ -2,4 +2,7 @@
 .sass-cache
 _site
 picasa.json
+.DS_Store
+**/.DS_Store
+*~
 **/*~

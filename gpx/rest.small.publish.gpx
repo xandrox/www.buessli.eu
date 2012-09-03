@@ -1,16 +1,12 @@
 
-<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="Adze - http://kobotsw.com/apps/adze" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="Adze - http://kobotsw.com/apps/adze" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
     <metadata>
         <name>Untitled Document</name>
-        <time>2012-09-02T05:22:26Z</time>
+        <time>2012-09-03T05:34:27Z</time>
     </metadata>
     <trk>
         <name>Untitled Track</name>
         <trkseg>
-            <trkpt lon="21.636887" lat="47.491364"></trkpt>
-            <trkpt lon="22.054367" lat="47.417076"></trkpt>
-            <trkpt lon="22.867355" lat="47.743156"></trkpt>
-            <trkpt lon="23.592453" lat="47.669224"></trkpt>
             <trkpt lon="24.031906" lat="47.802223"></trkpt>
             <trkpt lon="24.449387" lat="47.684017"></trkpt>
             <trkpt lon="25.064621" lat="47.580368"></trkpt>
